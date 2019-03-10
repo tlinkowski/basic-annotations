@@ -11,6 +11,10 @@ The approach to nullability taken by this library is:
 
 > **Everything is non-null by default, unless explicitly annotated as nullable.**
 
+This approach is directly in line with [Kotlin's approach](https://kotlinlang.org/docs/reference/null-safety.html) (although Kotlin enforces it through its type system):
+- `String` (Kotlin) / `String` (Java) → non-null `String`
+- `String?` (Kotlin) / `@Nullable String` (Java) → nullable `String`
+
 For this purpose, the library provides two annotations in the `pl.tlinkowski.annotation` package:
 1. `@AllNonnullByDefault`:
     - [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html): [packages](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PACKAGE)
@@ -45,3 +49,25 @@ However, should the state of JSR 305 change in favor of dropping its usage, this
 
 ## Mutability
 
+The approach to mutability of [`Collection`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html)s (but also [`Iterator`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html)s) taken by this library is:
+
+> **Every use of `Collection` or `Iterator` should be annotated with either `@ReadOnly` or `@Mutable`.**
+
+This approach is in line with [Kotlin's approach](https://kotlinlang.org/docs/reference/collections.html) (although Kotlin enforces it through its type system):
+- [`kotlin.collections.List<T>`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html) / `@ReadOnly java.util.List<T>` (Java) → read-only `List`
+- [`kotlin.collections.MutableList<T>`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html) / `@Mutable java.util.List<T>` (Java) → mutable `List`
+
+For this purpose, this library includes two annotations in the `kotlin.annotations.jvm` package (as a transitive dependency on [`kotlin-annotations-jvm`](https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-annotations-jvm)):
+1. [`@ReadOnly`](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-annotations-jvm/src/kotlin/annotations/jvm/ReadOnly.java):
+    - [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html): [fields](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#FIELD), [methods](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD), [parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PARAMETER), or [local variables](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE)
+    - affects: annotated entity
+2. [`@Mutable`](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-annotations-jvm/src/kotlin/annotations/jvm/Mutable.java): 
+    - [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html): [fields](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#FIELD), [methods](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD), [parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PARAMETER), or [local variables](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE)
+    - affects: annotated entity
+
+There are three main problems with these annotations, though:
+1. [According to Denis Zharkov](https://youtrack.jetbrains.com/issue/KT-6878#focus=streamItem-27-3198699.0-0), these annotations will probably be renamed once [KT-23812](https://youtrack.jetbrains.com/issue/KT-23812) is done.
+2. These annotations are JDK6-compatible, and hence they cannot target [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE) or [type parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_PARAMETER) (introduced in JDK 8). There's an issue about improving this ([KT-28982](https://youtrack.jetbrains.com/issue/KT-28982)), but it seems idle now.
+3. These annotations are not retained at runtime (`@Retention(RetentionPolicy.CLASS)`), which could be useful (at least theoretically).
+
+To sum up, the main reason this library does not introduce its own annotations is that Kotlin wouldn't recognize them, and they are very useful for Kotlin interop. However, once [KT-23812](https://youtrack.jetbrains.com/issue/KT-23812) is done, this library will probably migrate to some [new annotations](https://github.com/Kotlin/KEEP/blob/jvm-meta-annotations-artifact/proposals/jvm-meta-annotations-artifact.md) that can be understood by Kotlin.
