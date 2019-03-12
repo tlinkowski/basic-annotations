@@ -1,0 +1,4 @@
+[bugtraq]
+  url = https://github.com/tlinkowski/basic-annotations/issues/%BUGID%
+  loglinkregex = "#\\d+"
+  logregex = \\d+
