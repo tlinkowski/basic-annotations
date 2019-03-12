@@ -21,24 +21,24 @@ rootProject.name = "basic-annotations"
  * Source: https://aalmiray.github.io/kordamp-gradle-plugins/#_project_structure
  */
 fun includeProject(projectDirName: String, projectName: String) {
-    val baseDir = File(settingsDir, projectDirName)
-    val projectDir = File(baseDir, projectName)
-    val buildFileName = "$projectName.gradle.kts"
+  val baseDir = File(settingsDir, projectDirName)
+  val projectDir = File(baseDir, projectName)
+  val buildFileName = "$projectName.gradle.kts"
 
-    assert(projectDir.isDirectory())
-    assert(File(projectDir, buildFileName).isFile())
+  assert(projectDir.isDirectory())
+  assert(File(projectDir, buildFileName).isFile())
 
-    include(projectName)
-    project(":$projectName").projectDir = projectDir
-    project(":$projectName").buildFileName = buildFileName
+  include(projectName)
+  project(":$projectName").projectDir = projectDir
+  project(":$projectName").buildFileName = buildFileName
 }
 
 listOf("subprojects").forEach { dirName ->
-    val subdir = File(rootDir, dirName)
-    subdir.walkTopDown().forEach { dir ->
-        val buildFile = File(dir, "${dir.name}.gradle.kts")
-        if (buildFile.exists()) {
-            includeProject(dirName, dir.name)
-        }
+  val subdir = File(rootDir, dirName)
+  subdir.walkTopDown().forEach { dir ->
+    val buildFile = File(dir, "${dir.name}.gradle.kts")
+    if (buildFile.exists()) {
+      includeProject(dirName, dir.name)
     }
+  }
 }
