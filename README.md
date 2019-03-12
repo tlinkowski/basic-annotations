@@ -1,5 +1,7 @@
 # Basic Annotations
 
+[![Build Status](https://travis-ci.com/tlinkowski/basic-annotations.svg?branch=master)](https://travis-ci.com/tlinkowski/basic-annotations)
+
 The purpose of this library is to provide a couple of basic annotations related to the following concepts:
 1. [Nullability](#nullability)
 2. [Mutability](#mutability) of [`Collection`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html)s/[`Iterator`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html)s
