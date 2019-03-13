@@ -3,5 +3,15 @@ jdk: openjdk11
 
 sudo: false # faster builds
 
+# https://stackoverflow.com/questions/33820638/travis-yml-gradlew-permission-denied/33820642#33820642
 before_install:
   - chmod +x gradlew
+
+# https://docs.travis-ci.com/user/languages/java/#caching
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
