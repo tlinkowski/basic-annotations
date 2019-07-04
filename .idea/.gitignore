@@ -40,3 +40,8 @@ out/
 # Other
 /compiler.xml
 /misc.xml
+
+# pl.tlinkowski.gradle.my.superpom
+/codeStyles/
+/copyright/
+/inspectionProfiles/

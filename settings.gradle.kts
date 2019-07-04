@@ -17,16 +17,13 @@
  */
 buildscript {
   repositories {
-    gradlePluginPortal()
+    mavenCentral()
   }
   dependencies {
-    classpath(group = "org.kordamp.gradle", name = "settings-gradle-plugin", version = "0.15.0")
+    val mySuperpomVersion: String by settings
+    classpath(group = "pl.tlinkowski.gradle.my", name = "my-settings-gradle-plugin", version = mySuperpomVersion)
   }
 }
-apply(plugin = "org.kordamp.gradle.settings")
+apply(plugin = "pl.tlinkowski.gradle.my.settings")
 
 rootProject.name = "basic-annotations"
-
-configure<org.kordamp.gradle.plugin.settings.ProjectsExtension> {
-  directories = listOf("subprojects")
-}
