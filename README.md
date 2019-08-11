@@ -17,7 +17,7 @@ The purpose of this library is to provide a couple of basic annotations related 
     [`Collection`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html)s /
     [`Iterator`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html)s
 
-3.  Miscellaneous
+3.  [Miscellaneous](#miscellaneous)
 
 ## Nullability
 
@@ -33,7 +33,7 @@ This approach is directly in line with [Kotlin's approach](https://kotlinlang.or
 
 For this purpose, the library provides two annotations in the `pl.tlinkowski.annotation.basic` package:
 
-1.  `@AllNonnullByDefault`:
+1.  [`@AllNonnullByDefault`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/AllNonnullByDefault.java):
 
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
         [packages](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PACKAGE)
@@ -53,7 +53,7 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
         [`@ParametersAreNonnullByDefault`](https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2/javax/annotation/ParametersAreNonnullByDefault.html)
         in JSR 305
 
-2.  `@Nullable`:
+2.  [`@Nullable`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/Nullable.java):
 
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
         [fields](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#FIELD),
@@ -140,3 +140,10 @@ and they are very useful for Kotlin interop. However, once [KT-23812](https://yo
 is done, this library will probably migrate to some
 [new annotations](https://github.com/Kotlin/KEEP/blob/jvm-meta-annotations-artifact/proposals/jvm-meta-annotations-artifact.md)
 that can be understood by Kotlin.
+
+## Miscellaneous
+
+-   [`@VisibleForTesting`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/VisibleForTesting.java):
+    Corresponds to Guava's
+    [`@VisibleForTesting`](https://google.github.io/guava/releases/27.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html)
+    annotation.

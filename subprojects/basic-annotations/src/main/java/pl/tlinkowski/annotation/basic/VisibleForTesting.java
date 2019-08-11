@@ -15,17 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package pl.tlinkowski.annotation.basic;
 
-plugins {
-  `java-library`
-}
+/**
+ * Corresponds to Guava's <a href="https://google.github.io/guava/releases/27.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html">
+ * {@code @VisibleForTesting}</a> annotation.
+ *
+ * @author Tomasz Linkowski
+ */
+public @interface VisibleForTesting {
 
-modularity.mixedJavaRelease(8)
-
-dependencies {
-  // do NOT expose JSR-305 to library users
-  implementation(group = "com.google.code.findbugs", name = "jsr305", version = "3.0.2")
-
-  val kotlinVersion: String by project
-  api(group = "org.jetbrains.kotlin", name = "kotlin-annotations-jvm", version = kotlinVersion)
 }

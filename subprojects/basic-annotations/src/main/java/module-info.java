@@ -15,17 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/**
+ * @author Tomasz Linkowski
+ */
+module pl.tlinkowski.annotation.basic {
+  exports pl.tlinkowski.annotation.basic;
 
-plugins {
-  `java-library`
-}
-
-modularity.mixedJavaRelease(8)
-
-dependencies {
-  // do NOT expose JSR-305 to library users
-  implementation(group = "com.google.code.findbugs", name = "jsr305", version = "3.0.2")
-
-  val kotlinVersion: String by project
-  api(group = "org.jetbrains.kotlin", name = "kotlin-annotations-jvm", version = kotlinVersion)
+  requires jsr305;
+  requires transitive kotlin.annotations.jvm;
 }
