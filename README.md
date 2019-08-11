@@ -46,8 +46,8 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
         *within the annotated package and its subpackages*
 
     -   similar to:
-        [`@NonNullApi`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullApi.html)
-        + [`@NonNullFields`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullFields.html)
+        [`@NonNullApi`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullApi.html) + 
+        [`@NonNullFields`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullFields.html)
         in Spring;
         [`@ParametersAreNonnullByDefault`](https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2/javax/annotation/ParametersAreNonnullByDefault.html)
         in JSR 305
