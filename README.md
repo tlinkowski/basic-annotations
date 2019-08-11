@@ -1,6 +1,12 @@
 # Basic Annotations
 
-[![Build Status](https://travis-ci.com/tlinkowski/basic-annotations.svg?branch=master)](https://travis-ci.com/tlinkowski/basic-annotations)
+[![Build (Linux)](https://img.shields.io/travis/com/tlinkowski/basic-annotations/master?logo=linux)](https://travis-ci.com/tlinkowski/basic-annotations)
+[![Build (Windows)](https://img.shields.io/appveyor/ci/tlinkowski/basic-annotations/master?logo=windows)](https://ci.appveyor.com/project/tlinkowski/basic-annotations/branch/master)
+[![Code coverage](https://img.shields.io/codecov/c/github/tlinkowski/basic-annotations)](https://codecov.io/gh/tlinkowski/basic-annotations)
+[![Codacy grade](https://img.shields.io/codacy/grade/00dfb34300b94e76b791732690fe8548)](https://app.codacy.com/project/tlinkowski/basic-annotations/dashboard)
+[![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE)](https://github-tools.github.io/github-release-notes/)
+[![Semantic Versioning](https://img.shields.io/badge/-semantic%20versioning-333333)](https://semver.org/)
+[![Maven Central](https://img.shields.io/maven-central/v/pl.tlinkowski.annotation/basic-annotations)](https://search.maven.org/search?q=g:pl.tlinkowski.annotation)
 
 The purpose of this library is to provide a couple of basic annotations related to the following concepts:
 1. [Nullability](#nullability)
