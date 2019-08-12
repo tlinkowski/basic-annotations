@@ -6,6 +6,7 @@
 [![Codacy grade](https://img.shields.io/codacy/grade/00dfb34300b94e76b791732690fe8548)](https://app.codacy.com/project/tlinkowski/basic-annotations/dashboard)
 
 [![Maven Central](https://img.shields.io/maven-central/v/pl.tlinkowski.annotation/basic-annotations)](https://search.maven.org/search?q=g:pl.tlinkowski.annotation)
+[![Javadocs](https://javadoc.io/badge/pl.tlinkowski.annotation/basic-annotations.svg?color=blue)](https://javadoc.io/doc/pl.tlinkowski.annotation/basic-annotations)
 [![Semantic Versioning](https://img.shields.io/badge/-semantic%20versioning-333333)](https://semver.org/)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE)](https://github-tools.github.io/github-release-notes/)
 
