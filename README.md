@@ -39,13 +39,9 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
         [packages](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PACKAGE)
 
-    -   affects: **all** [fields](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#FIELD),
-        [methods](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD) (= return types),
-        [parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PARAMETER),
-        [local variables](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE),
-        [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE),
-        and [type parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_PARAMETER)
-        *within the annotated package and its subpackages*
+    -   affects: **all** [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE)
+        (e.g. fields, method return types, method parameters, type parameters, local variables)
+        *within the annotated package*
 
     -   similar to:
         [`@NonNullApi`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullApi.html) + 
@@ -54,17 +50,15 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
         [`@ParametersAreNonnullByDefault`](https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2/javax/annotation/ParametersAreNonnullByDefault.html)
         in JSR 305
 
+    -   [example usage](subprojects/sample-java-api/src/main/java/pl/tlinkowski/sample/api/annotated/nullability/package-info.java#L21-L24)
+
 2.  [`@Nullable`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/Nullable.java):
 
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
-        [fields](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#FIELD),
-        [methods](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD),
-        [parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PARAMETER),
-        [local variables](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE),
-        [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE),
-        or [type parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_PARAMETER)
+        [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE)
+        (e.g. fields, method return types, method parameters, type parameters, local variables)
 
-    -   affects: annotated entity
+    -   affects: annotated type use
 
     -   similar to:
         [`@Nullable`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/Nullable.html)
@@ -72,9 +66,11 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
         [`@CheckForNull`](https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2/javax/annotation/CheckForNull.html)
         in JSR-305
 
+    -   [example usage](subprojects/sample-java-api/src/main/java/pl/tlinkowski/sample/api/annotated/nullability/NullabilityAnnotatedSample.java#L33-L41)
+
 The annotations in this library are based on the dormant Java Specification Request 
-[JSR 305](https://jcp.org/en/jsr/detail?id=305). JSR 305 has been chosen for this library after analyzing the
-following pros & cons (TODO: add link).
+[JSR 305](https://jcp.org/en/jsr/detail?id=305). JSR 305 has been chosen for this library after analyzing
+[the following pros & cons](https://blog.tlinkowski.pl/2019/when-to-use-jsr-305-for-nullability-in-java#assessment-of-jsr-305).
 
 To sum up, even though I'd rather *not* rely on JSR 305, it seems too well supported right now to discard it.
 
@@ -93,11 +89,11 @@ taken by this library is:
 This approach is in line with [Kotlin's approach](https://kotlinlang.org/docs/reference/collections.html)
 (although Kotlin enforces it through its type system):
 
--   [`kotlin.collections.List<T>`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)
-    / `@ReadOnly java.util.List<T>` (Java) → read-only `List`
+-   [`List<T>`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html) (Kotlin)
+    / `@ReadOnly List<T>` (Java) → read-only list of `T`
 
--   [`kotlin.collections.MutableList<T>`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)
-    / `@Mutable java.util.List<T>` (Java) → mutable `List`
+-   [`MutableList<T>`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html) (Kotlin)
+    / `@Mutable List<T>` (Java) → mutable list of `T`
 
 For this purpose, this library includes two annotations in the `kotlin.annotations.jvm` package
 (as a transitive dependency on [`kotlin-annotations-jvm`](https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-annotations-jvm)):
@@ -110,7 +106,9 @@ For this purpose, this library includes two annotations in the `kotlin.annotatio
         [parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PARAMETER),
         or [local variables](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE)
 
-    -   affects: annotated entity
+    -   affects: annotated type use
+
+    -   [example usage](subprojects/sample-java-api/src/main/java/pl/tlinkowski/sample/api/annotated/mutability/MutabilityAnnotatedSample.java#L30-L33)
 
 2.  [`@Mutable`](https://github.com/JetBrains/kotlin/blob/master/libraries/tools/kotlin-annotations-jvm/src/kotlin/annotations/jvm/Mutable.java):
  
@@ -120,7 +118,9 @@ For this purpose, this library includes two annotations in the `kotlin.annotatio
         [parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PARAMETER),
         or [local variables](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE)
 
-    -   affects: annotated entity
+    -   affects: annotated type use
+
+    -   [example usage](subprojects/sample-java-api/src/main/java/pl/tlinkowski/sample/api/annotated/mutability/MutabilityAnnotatedSample.java#L35-L38)
 
 There are three main problems with these annotations, though:
 
@@ -148,3 +148,14 @@ that can be understood by Kotlin.
     Corresponds to Guava's
     [`@VisibleForTesting`](https://google.github.io/guava/releases/27.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html)
     annotation.
+
+## Requirements
+
+Usage: JDK 8+.
+
+Building: Gradle 5+, JDK 11+.
+
+## About the Author
+
+See my webpage ([tlinkowski.pl](https://tlinkowski.pl/)) or
+find me on Twitter ([@t_linkowski](https://twitter.com/t_linkowski)).
