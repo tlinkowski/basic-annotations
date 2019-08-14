@@ -26,7 +26,10 @@ import kotlin.annotations.jvm.MigrationStatus;
 import kotlin.annotations.jvm.UnderMigration;
 
 /**
- * Declares that the annotated return value, parameter, field, or local variable can be {@code null}.
+ * Declares that the annotated type use (e.g. field, method return type, method parameter, type parameter, local
+ * variable) can be {@code null}.
+ * <p>
+ * Should be used at type use level in association with {@link AllNonnullByDefault} annotation at package level.
  *
  * @author Tomasz Linkowski
  */
@@ -34,10 +37,7 @@ import kotlin.annotations.jvm.UnderMigration;
 @Documented
 @Nonnull(when = When.MAYBE)
 @Retention(RetentionPolicy.RUNTIME)
-@Target({
-        ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE,
-        ElementType.TYPE_PARAMETER, ElementType.TYPE_USE
-})
+@Target(ElementType.TYPE_USE)
 @TypeQualifierNickname
 @UnderMigration(status = MigrationStatus.STRICT) // for compile-time errors in Kotlin
 public @interface Nullable {

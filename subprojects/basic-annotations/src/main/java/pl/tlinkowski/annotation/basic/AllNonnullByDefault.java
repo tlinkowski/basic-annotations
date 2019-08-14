@@ -25,8 +25,10 @@ import kotlin.annotations.jvm.MigrationStatus;
 import kotlin.annotations.jvm.UnderMigration;
 
 /**
- * Declares that the return values, parameters, fields, and local variables within an annotated package are not {@code
- * null} by default.
+ * Declares that all type uses (e.g. fields, method return types, method parameters, type parameters, local variables)
+ * within an annotated package are non-{@code null} by default.
+ * <p>
+ * Should be used at package level in association with {@link Nullable} annotations at type use level.
  *
  * @author Tomasz Linkowski
  */
@@ -35,10 +37,7 @@ import kotlin.annotations.jvm.UnderMigration;
 @Nonnull
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PACKAGE)
-@TypeQualifierDefault({
-        ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE,
-        ElementType.TYPE_PARAMETER, ElementType.TYPE_USE
-})
+@TypeQualifierDefault(ElementType.TYPE_USE)
 @UnderMigration(status = MigrationStatus.STRICT) // for compile-time errors in Kotlin
 public @interface AllNonnullByDefault {
 
