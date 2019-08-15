@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+config {
+  publishing.enabled = false
+}
+
 dependencies {
   implementation(project(":sample-java-api"))
 }

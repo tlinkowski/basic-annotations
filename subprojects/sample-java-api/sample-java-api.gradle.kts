@@ -20,6 +20,10 @@ plugins {
   `java-library`
 }
 
+config {
+  publishing.enabled = false
+}
+
 dependencies {
   compileOnly(project(":basic-annotations"))
 }
