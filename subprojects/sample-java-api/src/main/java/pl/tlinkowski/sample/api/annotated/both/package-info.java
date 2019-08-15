@@ -18,7 +18,7 @@
 /**
  * @author Tomasz Linkowski
  */
-@AllNonnullByDefault
+@NonNullPackage
 package pl.tlinkowski.sample.api.annotated.both;
 
-import pl.tlinkowski.annotation.basic.AllNonnullByDefault;
+import pl.tlinkowski.annotation.basic.NonNullPackage;

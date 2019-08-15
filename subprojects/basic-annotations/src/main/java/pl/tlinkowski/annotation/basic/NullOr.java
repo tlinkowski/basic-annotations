@@ -29,7 +29,7 @@ import kotlin.annotations.jvm.UnderMigration;
  * Declares that the annotated type use (e.g. field, method return type, method parameter, type parameter, local
  * variable) can be {@code null}.
  * <p>
- * Should be used at type use level in association with {@link AllNonnullByDefault} annotation at package level.
+ * Should be used at type use level in association with {@link NonNullPackage} annotation at package level.
  *
  * @author Tomasz Linkowski
  */

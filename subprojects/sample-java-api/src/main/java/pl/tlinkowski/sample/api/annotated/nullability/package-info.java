@@ -18,7 +18,7 @@
 /**
  * @author Tomasz Linkowski
  */
-@AllNonnullByDefault
+@NonNullPackage
 package pl.tlinkowski.sample.api.annotated.nullability;
 
-import pl.tlinkowski.annotation.basic.AllNonnullByDefault;
+import pl.tlinkowski.annotation.basic.NonNullPackage;

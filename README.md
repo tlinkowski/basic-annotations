@@ -34,7 +34,7 @@ This approach is directly in line with [Kotlin's approach](https://kotlinlang.or
 
 For this purpose, the library provides two annotations in the `pl.tlinkowski.annotation.basic` package:
 
-1.  [`@AllNonnullByDefault`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/AllNonnullByDefault.java):
+1.  [`@NonNullPackage`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/NonNullPackage.java):
 
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
         [packages](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PACKAGE)
@@ -75,7 +75,7 @@ The annotations in this library are based on the dormant Java Specification Requ
 To sum up, even though I'd rather *not* rely on JSR 305, it seems too well supported right now to discard it.
 
 However, should the state of JSR 305 change in favor of dropping its usage, this library will do just that. The purpose
-of this library is to provide `@AllNonnullByDefault` and `@NullOr` annotations that work in the best currently 
+of this library is to provide `@NonNullPackage` and `@NullOr` annotations that work in the best currently 
 possible way.
 
 ## Mutability

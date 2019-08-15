@@ -39,6 +39,6 @@ import kotlin.annotations.jvm.UnderMigration;
 @Target(ElementType.PACKAGE)
 @TypeQualifierDefault(ElementType.TYPE_USE)
 @UnderMigration(status = MigrationStatus.STRICT) // for compile-time errors in Kotlin
-public @interface AllNonnullByDefault {
+public @interface NonNullPackage {
 
 }
