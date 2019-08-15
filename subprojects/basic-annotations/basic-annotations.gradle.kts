@@ -23,6 +23,8 @@ plugins {
 modularity.mixedJavaRelease(8)
 
 config {
+  bintray.enabled = true
+
   javadoc.options.links = mutableListOf("https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2")
 }
 
