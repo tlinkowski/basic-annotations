@@ -32,12 +32,12 @@ class UnannotatedUsage {
     sample.obj = obj
   }
 
-  fun objAsNonnull() {
+  fun objAsAny() {
     val obj: Any = sample.obj
     sample.obj = obj
   }
 
-  fun objAsNullable() {
+  fun objAsAnyOrNull() {
     val obj: Any? = sample.obj
     sample.obj = obj
   }
@@ -49,12 +49,12 @@ class UnannotatedUsage {
     sample.list = list
   }
 
-  fun listAsReadOnlyNonnull() {
+  fun listAsListOfAny() {
     val list: List<Any> = sample.list
     sample.list = list
   }
 
-  fun listAsMutableNullable() {
+  fun listAsListOfAnyOrNull() {
     val list: MutableList<Any?> = sample.list
     sample.list = list
   }

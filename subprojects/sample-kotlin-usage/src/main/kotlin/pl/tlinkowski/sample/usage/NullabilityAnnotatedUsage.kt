@@ -33,16 +33,16 @@ class NullabilityAnnotatedUsage {
    * Conclusion: nullability for parameters/return types for Kotlin works as compile-time errors.
    */
   fun obj() {
-    var nonnullObj = sample.nonnullObj
-    var nullableObj = sample.nullableObj
+    var obj = sample.obj
+    var objOrNull = sample.objOrNull
 
-    sample.nonnullObj = nullableObj // compile-time error
-    sample.nullableObj = nonnullObj
+    sample.obj = objOrNull // compile-time error
+    sample.objOrNull = obj
 
     if (condition) {
-      nonnullObj = nullableObj // compile-time error
+      obj = objOrNull // compile-time error
     } else {
-      nullableObj = nonnullObj
+      objOrNull = obj
     }
   }
 
@@ -50,16 +50,16 @@ class NullabilityAnnotatedUsage {
    * Conclusion: nullability for cast parameters/return types for Kotlin works as compile-time errors.
    */
   fun castObj() {
-    var nonnullObj: Any = sample.nonnullObj
-    var nullableObj: Any? = sample.nullableObj
+    var obj: Any = sample.obj
+    var objOrNull: Any? = sample.objOrNull
 
-    sample.nonnullObj = nullableObj // compile-time error
-    sample.nullableObj = nonnullObj
+    sample.obj = objOrNull // compile-time error
+    sample.objOrNull = obj
 
     if (condition) {
-      nonnullObj = nullableObj // compile-time error
+      obj = objOrNull // compile-time error
     } else {
-      nullableObj = nonnullObj
+      objOrNull = obj
     }
   }
   //endregion
@@ -70,16 +70,16 @@ class NullabilityAnnotatedUsage {
    * Conclusion: nullability for generic parameter types for Kotlin works.
    */
   fun list() {
-    var listOfNonnull = sample.listOfNonnull
-    var listOfNullable = sample.listOfNullable
+    var listOfObj = sample.listOfObj
+    var listOfObjOrNull = sample.listOfObjOrNull
 
-    sample.listOfNonnull = listOfNullable // compile-time error
-    sample.listOfNullable = listOfNonnull // "Java type mismatch" (variance unknown) -> compile-time error
+    sample.listOfObj = listOfObjOrNull // compile-time error
+    sample.listOfObjOrNull = listOfObj // "Java type mismatch" (variance unknown) -> compile-time error
 
     if (condition) {
-      listOfNonnull = listOfNullable // compile-time error
+      listOfObj = listOfObjOrNull // compile-time error
     } else {
-      listOfNullable = listOfNonnull // "Java type mismatch" (variance unknown) -> compile-time error
+      listOfObjOrNull = listOfObj // "Java type mismatch" (variance unknown) -> compile-time error
     }
   }
 
@@ -87,16 +87,16 @@ class NullabilityAnnotatedUsage {
    * Conclusion: nullability for cast covariant generic parameter types for Kotlin works.
    */
   fun castCovariantList() {
-    var listOfNonnull: List<Any> = sample.listOfNonnull
-    var listOfNullable: List<Any?> = sample.listOfNullable
+    var listOfObj: List<Any> = sample.listOfObj
+    var listOfObjOrNull: List<Any?> = sample.listOfObjOrNull
 
-    sample.listOfNonnull = listOfNullable // compile-time error
-    sample.listOfNullable = listOfNonnull
+    sample.listOfObj = listOfObjOrNull // compile-time error
+    sample.listOfObjOrNull = listOfObj
 
     if (condition) {
-      listOfNonnull = listOfNullable // compile-time error
+      listOfObj = listOfObjOrNull // compile-time error
     } else {
-      listOfNullable = listOfNonnull
+      listOfObjOrNull = listOfObj
     }
   }
 
@@ -104,16 +104,16 @@ class NullabilityAnnotatedUsage {
    * Conclusion: nullability for cast invariant generic parameter types for Kotlin works.
    */
   fun castInvariantList() {
-    var listOfNonnull: MutableList<Any> = sample.listOfNonnull
-    var listOfNullable: MutableList<Any?> = sample.listOfNullable
+    var listOfObj: MutableList<Any> = sample.listOfObj
+    var listOfObjOrNull: MutableList<Any?> = sample.listOfObjOrNull
 
-    sample.listOfNonnull = listOfNullable // compile-time error
-    sample.listOfNullable = listOfNonnull // compile-time error
+    sample.listOfObj = listOfObjOrNull // compile-time error
+    sample.listOfObjOrNull = listOfObj // compile-time error
 
     if (condition) {
-      listOfNonnull = listOfNullable // compile-time error
+      listOfObj = listOfObjOrNull // compile-time error
     } else {
-      listOfNullable = listOfNonnull // compile-time error
+      listOfObjOrNull = listOfObj // compile-time error
     }
   }
   //endregion

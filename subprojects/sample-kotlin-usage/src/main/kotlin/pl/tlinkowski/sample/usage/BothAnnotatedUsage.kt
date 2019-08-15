@@ -30,59 +30,59 @@ class BothAnnotatedUsage {
    * Conclusion: null-wise mutability detection for Kotlin works.
    */
   internal fun list() {
-    val readOnlyListOfNonnull = sample.readOnlyListOfNonnull
-    val readOnlyListOfNullable = sample.readOnlyListOfNullable
-    val mutableListOfNonnull = sample.mutableListOfNonnull
-    val mutableListOfNullable = sample.mutableListOfNullable
+    val readOnlyListOfObj = sample.readOnlyListOfObj
+    val readOnlyListOfObjOrNull = sample.readOnlyListOfObjOrNull
+    val mutableListOfObj = sample.mutableListOfObj
+    val mutableListOfObjOrNull = sample.mutableListOfObjOrNull
 
-    sample.readOnlyListOfNonnull = readOnlyListOfNonnull
-    sample.readOnlyListOfNonnull = readOnlyListOfNullable // compile-time error
-    sample.readOnlyListOfNonnull = mutableListOfNonnull
-    sample.readOnlyListOfNonnull = mutableListOfNullable // compile-time error
+    sample.readOnlyListOfObj = readOnlyListOfObj
+    sample.readOnlyListOfObj = readOnlyListOfObjOrNull // compile-time error
+    sample.readOnlyListOfObj = mutableListOfObj
+    sample.readOnlyListOfObj = mutableListOfObjOrNull // compile-time error
 
-    sample.readOnlyListOfNullable = readOnlyListOfNonnull
-    sample.readOnlyListOfNullable = readOnlyListOfNullable
-    sample.readOnlyListOfNullable = mutableListOfNonnull
-    sample.readOnlyListOfNullable = mutableListOfNullable
+    sample.readOnlyListOfObjOrNull = readOnlyListOfObj
+    sample.readOnlyListOfObjOrNull = readOnlyListOfObjOrNull
+    sample.readOnlyListOfObjOrNull = mutableListOfObj
+    sample.readOnlyListOfObjOrNull = mutableListOfObjOrNull
 
-    sample.mutableListOfNonnull = readOnlyListOfNonnull // compile-time error
-    sample.mutableListOfNonnull = readOnlyListOfNullable // compile-time error
-    sample.mutableListOfNonnull = mutableListOfNonnull
-    sample.mutableListOfNonnull = mutableListOfNullable // compile-time error
+    sample.mutableListOfObj = readOnlyListOfObj // compile-time error
+    sample.mutableListOfObj = readOnlyListOfObjOrNull // compile-time error
+    sample.mutableListOfObj = mutableListOfObj
+    sample.mutableListOfObj = mutableListOfObjOrNull // compile-time error
 
-    sample.mutableListOfNullable = readOnlyListOfNonnull // compile-time error
-    sample.mutableListOfNullable = readOnlyListOfNullable // compile-time error
-    sample.mutableListOfNullable = mutableListOfNonnull // compile-time error
-    sample.mutableListOfNullable = mutableListOfNullable
+    sample.mutableListOfObjOrNull = readOnlyListOfObj // compile-time error
+    sample.mutableListOfObjOrNull = readOnlyListOfObjOrNull // compile-time error
+    sample.mutableListOfObjOrNull = mutableListOfObj // compile-time error
+    sample.mutableListOfObjOrNull = mutableListOfObjOrNull
   }
 
   /**
    * Conclusion: cast null-wise mutability detection for Kotlin works.
    */
   internal fun castList() {
-    val readOnlyListOfNonnull: List<Any> = sample.readOnlyListOfNonnull
-    val readOnlyListOfNullable: List<Any?> = sample.readOnlyListOfNullable
-    val mutableListOfNonnull: MutableList<Any> = sample.mutableListOfNonnull
-    val mutableListOfNullable: MutableList<Any?> = sample.mutableListOfNullable
+    val readOnlyListOfObj: List<Any> = sample.readOnlyListOfObj
+    val readOnlyListOfObjOrNull: List<Any?> = sample.readOnlyListOfObjOrNull
+    val mutableListOfObj: MutableList<Any> = sample.mutableListOfObj
+    val mutableListOfObjOrNull: MutableList<Any?> = sample.mutableListOfObjOrNull
 
-    sample.readOnlyListOfNonnull = readOnlyListOfNonnull
-    sample.readOnlyListOfNonnull = readOnlyListOfNullable // compile-time error
-    sample.readOnlyListOfNonnull = mutableListOfNonnull
-    sample.readOnlyListOfNonnull = mutableListOfNullable // compile-time error
+    sample.readOnlyListOfObj = readOnlyListOfObj
+    sample.readOnlyListOfObj = readOnlyListOfObjOrNull // compile-time error
+    sample.readOnlyListOfObj = mutableListOfObj
+    sample.readOnlyListOfObj = mutableListOfObjOrNull // compile-time error
 
-    sample.readOnlyListOfNullable = readOnlyListOfNonnull
-    sample.readOnlyListOfNullable = readOnlyListOfNullable
-    sample.readOnlyListOfNullable = mutableListOfNonnull
-    sample.readOnlyListOfNullable = mutableListOfNullable
+    sample.readOnlyListOfObjOrNull = readOnlyListOfObj
+    sample.readOnlyListOfObjOrNull = readOnlyListOfObjOrNull
+    sample.readOnlyListOfObjOrNull = mutableListOfObj
+    sample.readOnlyListOfObjOrNull = mutableListOfObjOrNull
 
-    sample.mutableListOfNonnull = readOnlyListOfNonnull // compile-time error
-    sample.mutableListOfNonnull = readOnlyListOfNullable // compile-time error
-    sample.mutableListOfNonnull = mutableListOfNonnull
-    sample.mutableListOfNonnull = mutableListOfNullable // compile-time error
+    sample.mutableListOfObj = readOnlyListOfObj // compile-time error
+    sample.mutableListOfObj = readOnlyListOfObjOrNull // compile-time error
+    sample.mutableListOfObj = mutableListOfObj
+    sample.mutableListOfObj = mutableListOfObjOrNull // compile-time error
 
-    sample.mutableListOfNullable = readOnlyListOfNonnull // compile-time error
-    sample.mutableListOfNullable = readOnlyListOfNullable // compile-time error
-    sample.mutableListOfNullable = mutableListOfNonnull // compile-time error
-    sample.mutableListOfNullable = mutableListOfNullable
+    sample.mutableListOfObjOrNull = readOnlyListOfObj // compile-time error
+    sample.mutableListOfObjOrNull = readOnlyListOfObjOrNull // compile-time error
+    sample.mutableListOfObjOrNull = mutableListOfObj // compile-time error
+    sample.mutableListOfObjOrNull = mutableListOfObjOrNull
   }
 }

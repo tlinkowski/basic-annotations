@@ -40,6 +40,6 @@ import kotlin.annotations.jvm.UnderMigration;
 @Target(ElementType.TYPE_USE)
 @TypeQualifierNickname
 @UnderMigration(status = MigrationStatus.STRICT) // for compile-time errors in Kotlin
-public @interface Nullable {
+public @interface NullOr {
 
 }

@@ -30,29 +30,29 @@ public final class BothAnnotatedUsage {
    * Conclusion: null-wise mutability detection for Java doesn't work.
    */
   void list() {
-    var readOnlyListOfNonnull = sample.getReadOnlyListOfNonnull();
-    var readOnlyListOfNullable = sample.getReadOnlyListOfNullable();
-    var mutableListOfNonnull = sample.getMutableListOfNonnull();
-    var mutableListOfNullable = sample.getMutableListOfNullable();
+    var readOnlyListOfObj = sample.getReadOnlyListOfObj();
+    var readOnlyListOfObjOrNull = sample.getReadOnlyListOfObjOrNull();
+    var mutableListOfObj = sample.getMutableListOfObj();
+    var mutableListOfObjOrNull = sample.getMutableListOfObjOrNull();
 
-    sample.setReadOnlyListOfNonnull(readOnlyListOfNonnull);
-    sample.setReadOnlyListOfNonnull(readOnlyListOfNullable); // unnoticed
-    sample.setReadOnlyListOfNonnull(mutableListOfNonnull);
-    sample.setReadOnlyListOfNonnull(mutableListOfNullable); // unnoticed
+    sample.setReadOnlyListOfObj(readOnlyListOfObj);
+    sample.setReadOnlyListOfObj(readOnlyListOfObjOrNull); // unnoticed
+    sample.setReadOnlyListOfObj(mutableListOfObj);
+    sample.setReadOnlyListOfObj(mutableListOfObjOrNull); // unnoticed
 
-    sample.setReadOnlyListOfNullable(readOnlyListOfNonnull);
-    sample.setReadOnlyListOfNullable(readOnlyListOfNullable);
-    sample.setReadOnlyListOfNullable(mutableListOfNonnull);
-    sample.setReadOnlyListOfNullable(mutableListOfNullable);
+    sample.setReadOnlyListOfObjOrNull(readOnlyListOfObj);
+    sample.setReadOnlyListOfObjOrNull(readOnlyListOfObjOrNull);
+    sample.setReadOnlyListOfObjOrNull(mutableListOfObj);
+    sample.setReadOnlyListOfObjOrNull(mutableListOfObjOrNull);
 
-    sample.setMutableListOfNonnull(readOnlyListOfNonnull); // unnoticed
-    sample.setMutableListOfNonnull(readOnlyListOfNullable); // unnoticed
-    sample.setMutableListOfNonnull(mutableListOfNonnull);
-    sample.setMutableListOfNonnull(mutableListOfNullable); // unnoticed
+    sample.setMutableListOfObj(readOnlyListOfObj); // unnoticed
+    sample.setMutableListOfObj(readOnlyListOfObjOrNull); // unnoticed
+    sample.setMutableListOfObj(mutableListOfObj);
+    sample.setMutableListOfObj(mutableListOfObjOrNull); // unnoticed
 
-    sample.setMutableListOfNullable(readOnlyListOfNonnull); // unnoticed
-    sample.setMutableListOfNullable(readOnlyListOfNullable); // unnoticed
-    sample.setMutableListOfNullable(mutableListOfNonnull); // unnoticed
-    sample.setMutableListOfNullable(mutableListOfNullable);
+    sample.setMutableListOfObjOrNull(readOnlyListOfObj); // unnoticed
+    sample.setMutableListOfObjOrNull(readOnlyListOfObjOrNull); // unnoticed
+    sample.setMutableListOfObjOrNull(mutableListOfObj); // unnoticed
+    sample.setMutableListOfObjOrNull(mutableListOfObjOrNull);
   }
 }

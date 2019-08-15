@@ -28,7 +28,7 @@ import kotlin.annotations.jvm.UnderMigration;
  * Declares that all type uses (e.g. fields, method return types, method parameters, type parameters, local variables)
  * within an annotated package are non-{@code null} by default.
  * <p>
- * Should be used at package level in association with {@link Nullable} annotations at type use level.
+ * Should be used at package level in association with {@link NullOr} annotations at type use level.
  *
  * @author Tomasz Linkowski
  */

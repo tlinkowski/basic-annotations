@@ -31,16 +31,16 @@ public final class NullabilityAnnotatedUsage {
    * Conclusion: nullability for parameters/return types for Java works partially as warnings.
    */
   void obj() {
-    var nonnullObj = sample.getNonnullObj();
-    var nullableObj = sample.getNullableObj();
+    var obj = sample.getObj();
+    var objOrNull = sample.getObjOrNull();
 
-    sample.setNonnullObj(nullableObj); // warning
-    sample.setNullableObj(nonnullObj);
+    sample.setObj(objOrNull); // warning
+    sample.setObjOrNull(obj);
 
     if (condition) {
-      nonnullObj = nullableObj; // unnoticed
+      obj = objOrNull; // unnoticed
     } else {
-      nullableObj = nonnullObj;
+      objOrNull = obj;
     }
   }
 
@@ -48,16 +48,16 @@ public final class NullabilityAnnotatedUsage {
    * Conclusion: nullability for generic parameter types for Java doesn't work.
    */
   void list() {
-    var listOfNonnull = sample.getListOfNonnull();
-    var listOfNullable = sample.getListOfNullable();
+    var listOfObj = sample.getListOfObj();
+    var listOfObjOrNull = sample.getListOfObjOrNull();
 
-    sample.setListOfNonnull(listOfNullable); // unnoticed
-    sample.setListOfNullable(listOfNonnull);
+    sample.setListOfObj(listOfObjOrNull); // unnoticed
+    sample.setListOfObjOrNull(listOfObj);
 
     if (condition) {
-      listOfNonnull = listOfNullable; // unnoticed
+      listOfObj = listOfObjOrNull; // unnoticed
     } else {
-      listOfNullable = listOfNonnull;
+      listOfObjOrNull = listOfObj;
     }
   }
 }

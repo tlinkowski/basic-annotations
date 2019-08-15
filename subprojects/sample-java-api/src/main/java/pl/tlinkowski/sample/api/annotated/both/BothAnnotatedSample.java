@@ -22,7 +22,7 @@ import java.util.List;
 import kotlin.annotations.jvm.Mutable;
 import kotlin.annotations.jvm.ReadOnly;
 
-import pl.tlinkowski.annotation.basic.Nullable;
+import pl.tlinkowski.annotation.basic.NullOr;
 
 /**
  * @author Tomasz Linkowski
@@ -30,22 +30,22 @@ import pl.tlinkowski.annotation.basic.Nullable;
 public interface BothAnnotatedSample {
 
   @ReadOnly
-  List<Object> getReadOnlyListOfNonnull();
+  List<Object> getReadOnlyListOfObj();
 
-  void setReadOnlyListOfNonnull(@ReadOnly List<Object> list);
+  void setReadOnlyListOfObj(@ReadOnly List<Object> list);
 
   @ReadOnly
-  List<@Nullable Object> getReadOnlyListOfNullable();
+  List<@NullOr Object> getReadOnlyListOfObjOrNull();
 
-  void setReadOnlyListOfNullable(@ReadOnly List<@Nullable Object> list);
-
-  @Mutable
-  List<Object> getMutableListOfNonnull();
-
-  void setMutableListOfNonnull(@Mutable List<Object> list);
+  void setReadOnlyListOfObjOrNull(@ReadOnly List<@NullOr Object> list);
 
   @Mutable
-  List<@Nullable Object> getMutableListOfNullable();
+  List<Object> getMutableListOfObj();
 
-  void setMutableListOfNullable(@Mutable List<@Nullable Object> list);
+  void setMutableListOfObj(@Mutable List<Object> list);
+
+  @Mutable
+  List<@NullOr Object> getMutableListOfObjOrNull();
+
+  void setMutableListOfObjOrNull(@Mutable List<@NullOr Object> list);
 }

@@ -19,26 +19,26 @@ package pl.tlinkowski.sample.api.annotated.nullability;
 
 import java.util.List;
 
-import pl.tlinkowski.annotation.basic.Nullable;
+import pl.tlinkowski.annotation.basic.NullOr;
 
 /**
  * @author Tomasz Linkowski
  */
 public interface NullabilityAnnotatedSample {
 
-  Object getNonnullObj();
+  Object getObj();
 
-  void setNonnullObj(Object obj);
+  void setObj(Object obj);
 
-  @Nullable Object getNullableObj();
+  @NullOr Object getObjOrNull();
 
-  void setNullableObj(@Nullable Object obj);
+  void setObjOrNull(@NullOr Object obj);
 
-  List<Object> getListOfNonnull();
+  List<Object> getListOfObj();
 
-  void setListOfNonnull(List<Object> list);
+  void setListOfObj(List<Object> list);
 
-  List<@Nullable Object> getListOfNullable();
+  List<@NullOr Object> getListOfObjOrNull();
 
-  void setListOfNullable(List<@Nullable Object> list);
+  void setListOfObjOrNull(List<@NullOr Object> list);
 }
