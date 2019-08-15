@@ -43,7 +43,7 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
         (e.g. fields, method return types, method parameters, type parameters, local variables)
         *within the annotated package*
 
-    -   similar to:
+    -   analogous to (except for the scope of affected entities):
         [`@NonNullApi`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullApi.html) + 
         [`@NonNullFields`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullFields.html)
         in Spring;
@@ -60,7 +60,7 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
 
     -   affects: annotated type use
 
-    -   similar to:
+    -   analogous to (except for the scope of allowed targets):
         [`@Nullable`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/Nullable.html)
         in Spring;
         [`@CheckForNull`](https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2/javax/annotation/CheckForNull.html)

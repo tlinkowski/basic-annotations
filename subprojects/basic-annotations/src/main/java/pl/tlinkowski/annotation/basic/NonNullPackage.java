@@ -29,16 +29,21 @@ import kotlin.annotations.jvm.UnderMigration;
  * within an annotated package are non-{@code null} by default.
  * <p>
  * Should be used at package level in association with {@link NullOr} annotations at type use level.
+ * <p>
+ * Recognized by IDEs (e.g. IntelliJ) and by Kotlin (to infer nullability for its types).
+ * <p>
+ * Analogous to (except for the scope of affected entities):
+ * <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/NonNullApi.html">{@code
+ * NonNullApi}</a> in Spring, {@link javax.annotation.ParametersAreNonnullByDefault} in JSR 305.
  *
  * @author Tomasz Linkowski
  */
-// https://youtrack.jetbrains.com/issue/KT-10942
 @Documented
 @Nonnull
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PACKAGE)
 @TypeQualifierDefault(ElementType.TYPE_USE)
-@UnderMigration(status = MigrationStatus.STRICT) // for compile-time errors in Kotlin
+@UnderMigration(status = MigrationStatus.STRICT) // https://youtrack.jetbrains.com/issue/KT-10942
 public @interface NonNullPackage {
 
 }

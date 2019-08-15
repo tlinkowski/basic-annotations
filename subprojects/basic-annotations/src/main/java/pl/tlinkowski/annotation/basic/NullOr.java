@@ -30,16 +30,21 @@ import kotlin.annotations.jvm.UnderMigration;
  * variable) can be {@code null}.
  * <p>
  * Should be used at type use level in association with {@link NonNullPackage} annotation at package level.
+ * <p>
+ * Recognized by IDEs (e.g. IntelliJ) and by Kotlin (to infer nullability for its types).
+ * <p>
+ * Analogous to (except for the scope of allowed targets):
+ * <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/lang/Nullable.html">{@code
+ * Nullable}</a> in Spring, {@link javax.annotation.CheckForNull} in JSR 305.
  *
  * @author Tomasz Linkowski
  */
-// https://youtrack.jetbrains.com/issue/KT-10942
 @Documented
 @Nonnull(when = When.MAYBE)
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE_USE)
 @TypeQualifierNickname
-@UnderMigration(status = MigrationStatus.STRICT) // for compile-time errors in Kotlin
+@UnderMigration(status = MigrationStatus.STRICT) // https://youtrack.jetbrains.com/issue/KT-10942
 public @interface NullOr {
 
 }
