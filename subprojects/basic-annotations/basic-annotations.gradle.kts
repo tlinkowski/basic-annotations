@@ -25,11 +25,11 @@ modularity.mixedJavaRelease(8)
 config {
   bintray.enabled = true
 
-  javadoc.options.links = mutableListOf("https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2")
+  javadoc.autoLinks.configurations.add("implementation") // for JSR 305
 }
 
 dependencies {
-  // do NOT expose JSR-305 to library users
+  // do NOT expose JSR 305 to library users
   implementation(group = "com.google.code.findbugs", name = "jsr305", version = "3.0.2")
 
   val kotlinVersion: String by project
