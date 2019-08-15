@@ -22,6 +22,10 @@ plugins {
 
 modularity.mixedJavaRelease(8)
 
+config {
+  javadoc.options.links = mutableListOf("https://static.javadoc.io/com.google.code.findbugs/jsr305/3.0.2")
+}
+
 dependencies {
   // do NOT expose JSR-305 to library users
   implementation(group = "com.google.code.findbugs", name = "jsr305", version = "3.0.2")
