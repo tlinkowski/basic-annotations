@@ -17,6 +17,7 @@
  */
 
 plugins {
+  // https://github.com/tlinkowski/tlinkowski-superpom
   id("pl.tlinkowski.gradle.my.superpom")
 }
 

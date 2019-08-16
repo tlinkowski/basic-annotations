@@ -15,9 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * @author Tomasz Linkowski
- */
 @NonNullPackage
 package pl.tlinkowski.sample.api.annotated.both;
 

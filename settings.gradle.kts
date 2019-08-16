@@ -20,6 +20,7 @@ buildscript {
     mavenCentral()
   }
   dependencies {
+    // https://github.com/tlinkowski/tlinkowski-superpom
     val mySuperpomVersion: String by settings
     classpath(group = "pl.tlinkowski.gradle.my", name = "my-settings-gradle-plugin", version = mySuperpomVersion)
   }
