@@ -10,6 +10,39 @@
 [![Semantic Versioning](https://img.shields.io/badge/-semantic%20versioning-333333)](https://semver.org/)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE)](https://github-tools.github.io/github-release-notes/)
 
+## Usage
+
+<details open>
+<summary><code>build.gradle.kts</code></summary>
+
+```kotlin
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly(group = "pl.tlinkowski.annotation", name = "basic-annotations", version = "0.1.0")
+}
+```
+
+</details>
+<details>
+<summary><code>build.gradle</code></summary>
+
+```groovy
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly group: 'pl.tlinkowski.annotation', name: 'basic-annotations', version: '0.1.0'
+}
+```
+
+</details>
+
+## Purpose
+
 The purpose of this library is to provide a couple of basic annotations related to the following concepts:
 
 1.  [Nullability](#nullability)
@@ -20,7 +53,7 @@ The purpose of this library is to provide a couple of basic annotations related 
 
 3.  [Miscellaneous](#miscellaneous)
 
-## Nullability
+### Nullability
 
 The approach to nullability taken by this library is:
 
@@ -78,7 +111,7 @@ However, should the state of JSR 305 change in favor of dropping its usage, this
 of this library is to provide `@NonNullPackage` and `@NullOr` annotations that work in the best currently 
 possible way.
 
-## Mutability
+### Mutability
 
 The approach to mutability of [`Collection`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html)s
 (but also [`Iterator`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html)s)
@@ -142,7 +175,7 @@ is done, this library will probably migrate to some
 [new annotations](https://github.com/Kotlin/KEEP/blob/jvm-meta-annotations-artifact/proposals/jvm-meta-annotations-artifact.md)
 that can be understood by Kotlin.
 
-## Miscellaneous
+### Miscellaneous
 
 -   [`@VisibleForTesting`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/VisibleForTesting.java):
     Corresponds to Guava's
