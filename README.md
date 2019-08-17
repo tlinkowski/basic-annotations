@@ -12,34 +12,39 @@
 
 ## Usage
 
+### Gradle
+
 <details open>
-<summary><code>build.gradle.kts</code></summary>
+<summary>Kotlin DSL</summary>
 
 ```kotlin
-repositories {
-  mavenCentral()
-}
-
 dependencies {
-  compileOnly(group = "pl.tlinkowski.annotation", name = "basic-annotations", version = "0.1.0")
+  compileOnly(group = "pl.tlinkowski.annotation", name = "basic-annotations", version = "x.y.z")
 }
 ```
 
 </details>
 <details>
-<summary><code>build.gradle</code></summary>
+<summary>Groovy DSL</summary>
 
 ```groovy
-repositories {
-  mavenCentral()
-}
-
 dependencies {
-  compileOnly group: 'pl.tlinkowski.annotation', name: 'basic-annotations', version: '0.1.0'
+  compileOnly group: 'pl.tlinkowski.annotation', name: 'basic-annotations', version: 'x.y.z'
 }
 ```
 
 </details>
+
+### Maven
+
+```xml
+<dependency>
+  <groupId>pl.tlinkowski.annotation</groupId>
+  <artifactId>basic-annotations</artifactId>
+  <version>x.y.z</version>
+  <scope>provided</scope>
+</dependency>
+```
 
 ## Purpose
 
