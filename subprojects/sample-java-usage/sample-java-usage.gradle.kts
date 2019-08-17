@@ -16,6 +16,14 @@
  * limitations under the License.
  */
 
+plugins {
+  id("org.checkerframework") version "0.3.22"
+}
+
+checkerFramework {
+  checkers = listOf("org.checkerframework.checker.nullness.NullnessChecker")
+}
+
 config {
   publishing.enabled = false
 }
