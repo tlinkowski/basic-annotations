@@ -1,4 +1,4 @@
-# Basic Annotations
+# Basic Java Annotations
 
 [![Build (Linux)](https://img.shields.io/travis/com/tlinkowski/basic-annotations/master?logo=linux)](https://travis-ci.com/tlinkowski/basic-annotations)
 [![Build (Windows)](https://img.shields.io/appveyor/ci/tlinkowski/basic-annotations/master?logo=windows)](https://ci.appveyor.com/project/tlinkowski/basic-annotations/branch/master)

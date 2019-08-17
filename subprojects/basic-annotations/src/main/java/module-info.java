@@ -17,7 +17,7 @@
  */
 
 /**
- * Provides a set of basic annotations based on <a href="https://jcp.org/en/jsr/detail?id=305">JSR 305</a> and
+ * Provides a set of basic Java annotations based on <a href="https://jcp.org/en/jsr/detail?id=305">JSR 305</a> and
  * <a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-annotations-jvm">Kotlin JVM
  * annotations</a>.
  * <p>
