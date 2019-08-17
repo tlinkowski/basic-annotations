@@ -17,3 +17,7 @@ Release date: 17/08/2019.
 -   [#3](https://github.com/tlinkowski/basic-annotations/issues/3): Init IntelliJ config
 -   [#2](https://github.com/tlinkowski/basic-annotations/issues/2): Init Gradle configuration
 -   [#1](https://github.com/tlinkowski/basic-annotations/issues/1): Fill README.md with appropriate descriptions
+
+### Bug Fixes
+
+-   [#13](https://github.com/tlinkowski/basic-annotations/issues/13): Javadoc JAR of basic-annotations subproject is not synced to MavenLocal
