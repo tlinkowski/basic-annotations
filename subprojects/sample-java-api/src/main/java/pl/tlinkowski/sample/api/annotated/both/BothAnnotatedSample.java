@@ -21,8 +21,7 @@ import java.util.List;
 
 import kotlin.annotations.jvm.Mutable;
 import kotlin.annotations.jvm.ReadOnly;
-
-import pl.tlinkowski.annotation.basic.NullOr;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * @author Tomasz Linkowski
@@ -35,9 +34,9 @@ public interface BothAnnotatedSample {
   void setReadOnlyListOfObj(@ReadOnly List<Object> list);
 
   @ReadOnly
-  List<@NullOr Object> getReadOnlyListOfObjOrNull();
+  List<@Nullable Object> getReadOnlyListOfObjOrNull();
 
-  void setReadOnlyListOfObjOrNull(@ReadOnly List<@NullOr Object> list);
+  void setReadOnlyListOfObjOrNull(@ReadOnly List<@Nullable Object> list);
 
   @Mutable
   List<Object> getMutableListOfObj();
@@ -45,7 +44,7 @@ public interface BothAnnotatedSample {
   void setMutableListOfObj(@Mutable List<Object> list);
 
   @Mutable
-  List<@NullOr Object> getMutableListOfObjOrNull();
+  List<@Nullable Object> getMutableListOfObjOrNull();
 
-  void setMutableListOfObjOrNull(@Mutable List<@NullOr Object> list);
+  void setMutableListOfObjOrNull(@Mutable List<@Nullable Object> list);
 }

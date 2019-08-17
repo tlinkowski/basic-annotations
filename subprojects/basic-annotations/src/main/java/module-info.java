@@ -37,6 +37,6 @@
 module pl.tlinkowski.annotation.basic {
   exports pl.tlinkowski.annotation.basic;
 
-  requires jsr305;
+  requires transitive org.checkerframework.checker.qual;
   requires transitive kotlin.annotations.jvm;
 }

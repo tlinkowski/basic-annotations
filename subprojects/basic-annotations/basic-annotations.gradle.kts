@@ -29,8 +29,7 @@ config {
 }
 
 dependencies {
-  // do NOT expose JSR 305 to library users
-  implementation(group = "com.google.code.findbugs", name = "jsr305", version = "3.0.2")
+  api(group = "org.checkerframework", name = "checker-qual", version = "2.10.0")
 
   val kotlinVersion: String by project
   api(group = "org.jetbrains.kotlin", name = "kotlin-annotations-jvm", version = kotlinVersion)
