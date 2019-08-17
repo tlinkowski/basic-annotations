@@ -46,6 +46,14 @@ dependencies {
 </dependency>
 ```
 
+### JPMS (`module-info.java`)
+
+```java
+module a.b.c {
+  requires static pl.tlinkowski.annotation.basic;
+}
+```
+
 ## Purpose
 
 The purpose of this library is to provide a couple of basic annotations related to the following concepts:
