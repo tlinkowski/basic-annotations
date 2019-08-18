@@ -24,7 +24,8 @@ plugins {
 config {
   info {
     name = "basic-annotations"
-    description = """A couple of "core" annotations that cover null safety (via JSR-305), collection mutability (via Kotlin), and a few other concepts."""
+    description = "A couple of basic Java annotations that cover null safety (via JSR 305), collection mutability (via Kotlin), and a few other concepts."
+    tags = listOf("java", "annotation", "nullability", "mutability")
     inceptionYear = "2019"
 
     links {
