@@ -22,7 +22,7 @@ buildscript {
   dependencies {
     // https://github.com/tlinkowski/tlinkowski-superpom
     val mySuperpomVersion: String by settings
-    classpath(group = "pl.tlinkowski.gradle.my", name = "my-settings-gradle-plugin", version = mySuperpomVersion)
+    classpath(group = "pl.tlinkowski.gradle.my", name = "pl.tlinkowski.gradle.my.settings", version = mySuperpomVersion)
   }
 }
 apply(plugin = "pl.tlinkowski.gradle.my.settings")
