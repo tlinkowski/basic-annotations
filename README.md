@@ -5,8 +5,8 @@
 [![Code coverage](https://img.shields.io/codecov/c/github/tlinkowski/basic-annotations)](https://codecov.io/gh/tlinkowski/basic-annotations)
 [![Codacy grade](https://img.shields.io/codacy/grade/00dfb34300b94e76b791732690fe8548)](https://app.codacy.com/project/tlinkowski/basic-annotations/dashboard)
 
-[![Maven Central](https://img.shields.io/maven-central/v/pl.tlinkowski.annotation/basic-annotations?label=Maven%20Central)](https://search.maven.org/search?q=g:pl.tlinkowski.annotation)
-[![Javadocs](https://javadoc.io/badge/pl.tlinkowski.annotation/basic-annotations.svg?color=blue)](https://javadoc.io/doc/pl.tlinkowski.annotation/basic-annotations)
+[![Maven Central](https://img.shields.io/maven-central/v/pl.tlinkowski.annotation/pl.tlinkowski.annotation.basic?label=Maven%20Central)](https://search.maven.org/search?q=g:pl.tlinkowski.annotation)
+[![Javadocs](https://javadoc.io/badge/pl.tlinkowski.annotation/pl.tlinkowski.annotation.basic.svg?color=blue)](https://javadoc.io/doc/pl.tlinkowski.annotation/pl.tlinkowski.annotation.basic)
 [![Semantic Versioning](https://img.shields.io/badge/-semantic%20versioning-333333)](https://semver.org/)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE)](https://github-tools.github.io/github-release-notes/)
 
@@ -19,7 +19,7 @@
 
 ```kotlin
 dependencies {
-  compileOnly(group = "pl.tlinkowski.annotation", name = "basic-annotations", version = "x.y.z")
+  compileOnly(group = "pl.tlinkowski.annotation", name = "pl.tlinkowski.annotation.basic", version = "x.y.z")
 }
 ```
 
@@ -29,7 +29,7 @@ dependencies {
 
 ```groovy
 dependencies {
-  compileOnly group: 'pl.tlinkowski.annotation', name: 'basic-annotations', version: 'x.y.z'
+  compileOnly group: 'pl.tlinkowski.annotation', name: 'pl.tlinkowski.annotation.basic', version: 'x.y.z'
 }
 ```
 
@@ -40,7 +40,7 @@ dependencies {
 ```xml
 <dependency>
   <groupId>pl.tlinkowski.annotation</groupId>
-  <artifactId>basic-annotations</artifactId>
+  <artifactId>pl.tlinkowski.annotation.basic</artifactId>
   <version>x.y.z</version>
   <scope>provided</scope>
 </dependency>
@@ -80,7 +80,7 @@ This approach is directly in line with [Kotlin's approach](https://kotlinlang.or
 
 For this purpose, the library provides two annotations in the `pl.tlinkowski.annotation.basic` package:
 
-1.  [`@NonNullPackage`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/NonNullPackage.java):
+1.  [`@NonNullPackage`](subprojects/pl.tlinkowski.annotation.basic/src/main/java/pl/tlinkowski/annotation/basic/NonNullPackage.java):
 
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
         [packages](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PACKAGE)
@@ -98,7 +98,7 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
 
     -   [example usage](subprojects/sample-java-api/src/main/java/pl/tlinkowski/sample/api/annotated/nullability/package-info.java#L21-L24)
 
-2.  [`@NullOr`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/NullOr.java):
+2.  [`@NullOr`](subprojects/pl.tlinkowski.annotation.basic/src/main/java/pl/tlinkowski/annotation/basic/NullOr.java):
 
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
         [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE)
@@ -190,7 +190,7 @@ that can be understood by Kotlin.
 
 ### Miscellaneous
 
--   [`@VisibleForTesting`](subprojects/basic-annotations/src/main/java/pl/tlinkowski/annotation/basic/VisibleForTesting.java):
+-   [`@VisibleForTesting`](subprojects/pl.tlinkowski.annotation.basic/src/main/java/pl/tlinkowski/annotation/basic/VisibleForTesting.java):
     Corresponds to Guava's
     [`@VisibleForTesting`](https://google.github.io/guava/releases/27.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html)
     annotation.
