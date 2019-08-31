@@ -86,7 +86,8 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
         [packages](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#PACKAGE)
 
     -   affects: **all** [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE)
-        (e.g. fields, method return types, method parameters, type parameters, local variables)
+        (e.g. fields, method return types, method parameters, type parameters, local variables) and
+        [type parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_PARAMETER)
         *within the annotated package*
 
     -   analogous to (except for the scope of affected entities):
@@ -102,7 +103,8 @@ For this purpose, the library provides two annotations in the `pl.tlinkowski.ann
 
     -   [target](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html):
         [type uses](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_USE)
-        (e.g. fields, method return types, method parameters, type parameters, local variables)
+        (e.g. fields, method return types, method parameters, type parameters, local variables) and
+        [type parameters](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#TYPE_PARAMETER)
 
     -   affects: annotated type use
 

@@ -42,7 +42,7 @@ import kotlin.annotations.jvm.UnderMigration;
 @Documented
 @Nonnull(when = When.MAYBE)
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE_USE)
+@Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
 @TypeQualifierNickname
 @UnderMigration(status = MigrationStatus.STRICT) // https://youtrack.jetbrains.com/issue/KT-10942
 public @interface NullOr {

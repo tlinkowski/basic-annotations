@@ -42,7 +42,7 @@ import kotlin.annotations.jvm.UnderMigration;
 @Nonnull
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PACKAGE)
-@TypeQualifierDefault(ElementType.TYPE_USE)
+@TypeQualifierDefault({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
 @UnderMigration(status = MigrationStatus.STRICT) // https://youtrack.jetbrains.com/issue/KT-10942
 public @interface NonNullPackage {
 
