@@ -25,7 +25,7 @@ modularity.mixedJavaRelease(8)
 config {
   bintray.enabled = true
 
-  javadoc.autoLinks.configurations.add("implementation") // for JSR 305
+  javadoc.autoLinks.configurations = listOf("implementation") // for JSR 305
 }
 
 dependencies {
