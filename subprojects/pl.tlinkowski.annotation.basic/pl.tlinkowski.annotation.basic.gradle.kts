@@ -32,7 +32,8 @@ dependencies {
   // do NOT expose JSR 305 to library users
   implementation(group = "com.google.code.findbugs", name = "jsr305", version = "3.0.2")
 
-  val kotlinVersion: String by project
+  // workaround for https://github.com/tlinkowski/basic-annotations/issues/19
+  val kotlinVersion = "1.3.50" //: String by project
   api(group = "org.jetbrains.kotlin", name = "kotlin-annotations-jvm", version = kotlinVersion)
 }
 
