@@ -194,8 +194,21 @@ that can be understood by Kotlin.
 
 -   [`@VisibleForTesting`](subprojects/pl.tlinkowski.annotation.basic/src/main/java/pl/tlinkowski/annotation/basic/VisibleForTesting.java):
     Corresponds to Guava's
-    [`@VisibleForTesting`](https://google.github.io/guava/releases/27.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html)
+    [`@VisibleForTesting`](https://google.github.io/guava/releases/28.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html)
     annotation.
+
+## Sample Projects
+
+Sample projects for this library can be found in [`sample`](subprojects/sample) subdirectory:
+
+-   [`pl.tlinkowski.annotation.sample.api`](subprojects/sample/pl.tlinkowski.annotation.sample.api):
+    sample Java API annotated with `@NonNullPackage` and `@ReadOnly`
+
+-   [`pl.tlinkowski.annotation.sample.usage.java`](subprojects/sample/pl.tlinkowski.annotation.sample.usage.java):
+    usage of the above API (both correct and incorrect, the latter resulting in warnings from IntelliJ IDEA)
+
+-   [`pl.tlinkowski.annotation.sample.usage.kotlin`](subprojects/sample/pl.tlinkowski.annotation.sample.usage.kotlin):
+    usage of the above API (both correct and incorrect, the latter resulting in errors from Kotlin compiler)
 
 ## Requirements
 
