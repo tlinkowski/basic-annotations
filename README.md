@@ -12,30 +12,26 @@
 
 ## Usage
 
-### Gradle
-
 <details open>
-<summary>Kotlin DSL</summary>
+<summary>Gradle (Kotlin DSL)</summary>
 
 ```kotlin
-dependencies {
-  compileOnly(group = "pl.tlinkowski.annotation", name = "pl.tlinkowski.annotation.basic", version = "x.y.z")
-}
+compileOnly(group = "pl.tlinkowski.annotation", name = "pl.tlinkowski.annotation.basic", version = "x.y.z")
 ```
 
 </details>
+
 <details>
-<summary>Groovy DSL</summary>
+<summary>Gradle (Groovy DSL)</summary>
 
 ```groovy
-dependencies {
-  compileOnly group: 'pl.tlinkowski.annotation', name: 'pl.tlinkowski.annotation.basic', version: 'x.y.z'
-}
+compileOnly group: 'pl.tlinkowski.annotation', name: 'pl.tlinkowski.annotation.basic', version: 'x.y.z'
 ```
 
 </details>
 
-### Maven
+<details>
+<summary>Maven</summary>
 
 ```xml
 <dependency>
@@ -46,13 +42,16 @@ dependencies {
 </dependency>
 ```
 
-### JPMS (`module-info.java`)
+</details>
+
+<details open>
+<summary>JPMS (<code>module-info.java</code>)</summary>
 
 ```java
-module a.b.c {
-  requires static pl.tlinkowski.annotation.basic;
-}
+requires static pl.tlinkowski.annotation.basic;
 ```
+
+</details>
 
 ## Purpose
 
