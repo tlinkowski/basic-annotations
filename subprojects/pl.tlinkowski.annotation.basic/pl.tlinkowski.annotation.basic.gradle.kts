@@ -36,15 +36,3 @@ dependencies {
   val kotlinVersion = "1.3.50" //: String by project
   api(group = "org.jetbrains.kotlin", name = "kotlin-annotations-jvm", version = kotlinVersion)
 }
-
-//region WORKAROUND FOR: https://github.com/tlinkowski/basic-annotations/issues/13
-afterEvaluate {
-  publishing {
-    publications {
-      named<MavenPublication>("main") {
-        artifact(tasks.getByName("javadocJar"))
-      }
-    }
-  }
-}
-//endregion
