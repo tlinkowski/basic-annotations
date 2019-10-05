@@ -18,7 +18,11 @@
 package pl.tlinkowski.annotation.basic;
 
 /**
- * Corresponds to Guava's <a href="https://google.github.io/guava/releases/27.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html">
+ * "Annotates a program element that exists, or is more widely visible than otherwise necessary, only for use in test
+ * code."
+ * <p>
+ * Corresponds to Guava's
+ * <a href="https://google.github.io/guava/releases/27.0-jre/api/docs/com/google/common/annotations/VisibleForTesting.html">
  * {@code @VisibleForTesting}</a> annotation.
  *
  * @author Tomasz Linkowski
